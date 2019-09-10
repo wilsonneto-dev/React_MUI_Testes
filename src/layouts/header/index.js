@@ -1,44 +1,22 @@
 import React, { Component } from 'react';
+import { AppBar, withStyles, Toolbar, Typography } from '@material-ui/core';
 
-import { withStyles, AppBar, IconButton, Toolbar, Typography, Button } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-
-const styles = (theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-});
+import GlobalMUIStyles from '../../assets/global-mui-styles';
 
 class Header extends Component {
-  constructor(props){
-    super(props);
-    this.classes = props.classes;
-  }
-
   render() {
-    const { classes } = this;
+    const { classes } = this.props;
+
     return (
-      <div className={classes.root}>
-        <AppBar position="static">
+      <>
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              News
-          </Typography>
-            <Button color="inherit">Login</Button>
+            <Typography variant="h6">Testando essa UI</Typography>
           </Toolbar>
         </AppBar>
-      </div>
-    )
+      </>
+    );
   }
 }
 
-export default withStyles(styles)(Header);
+export default withStyles(GlobalMUIStyles)(Header);

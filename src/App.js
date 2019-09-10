@@ -5,15 +5,20 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Routes from './routes';
 
-import GlobalStyle from './assets/global-styles';
+import Footer from './layouts/footer';
+import Header from './layouts/header';
+import Menu from './layouts/menu';
 
-console.tron.log('ok...');
+import GlobalStyle from './assets/global-styles';
 
 function App() {
   return (
     <Provider store={store}>
       <GlobalStyle />
+      <Header />
+      <Menu />
       <Routes />
+      <Footer />
     </Provider>
   );
 }

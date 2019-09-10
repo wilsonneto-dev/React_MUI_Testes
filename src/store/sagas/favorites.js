@@ -3,7 +3,6 @@ import { call, put, select } from 'redux-saga/effects';
 import api from '../../services/api';
 
 import { Creators as FavoriteActions } from '../ducks/favorites';
-import { statement } from '@babel/template';
 
 export function* addFavorite(action) {
   try {
