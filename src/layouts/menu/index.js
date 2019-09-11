@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { Sort, Archive, Code } from '@material-ui/icons';
+import React, { Component } from "react";
+import { Sort, Archive, Code } from "@material-ui/icons";
 import {
   Hidden,
   Drawer,
   Divider,
-  List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  withStyles
-} from '@material-ui/core';
+  withStyles,
+  List
+} from "@material-ui/core";
 
-import GlobalMUIStyles from '../../assets/global-mui-styles';
+import GlobalMUIStyles from "../../assets/global-mui-styles";
 
 class Menu extends Component {
   render() {
@@ -24,31 +24,32 @@ class Menu extends Component {
             <Drawer variant="permanent" open>
               <div>
                 <div className={classes.toolbar} />
+                <List>
+                  <Divider />
 
-                <Divider />
+                  <ListItem button>
+                    <ListItemIcon>
+                      <Sort />
+                    </ListItemIcon>
+                    <ListItemText primary="Fluxo" />
+                  </ListItem>
 
-                <ListItem button>
-                  <ListItemIcon>
-                    <Sort />
-                  </ListItemIcon>
-                  <ListItemText primary="Fluxo" />
-                </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <Archive />
+                    </ListItemIcon>
+                    <ListItemText primary="Categorias" />
+                  </ListItem>
 
-                <ListItem button>
-                  <ListItemIcon>
-                    <Archive />
-                  </ListItemIcon>
-                  <ListItemText primary="Categorias" />
-                </ListItem>
+                  <Divider />
 
-                <Divider />
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <Code />
-                  </ListItemIcon>
-                  <ListItemText primary="Sobre" />
-                </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <Code />
+                    </ListItemIcon>
+                    <ListItemText primary="Sobre" />
+                  </ListItem>
+                </List>
               </div>
             </Drawer>
           </Hidden>
