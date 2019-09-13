@@ -28,6 +28,7 @@ class App extends Component {
 
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
+
             <Container maxWidth="lg" className={classes.container}>
               <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
               <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>

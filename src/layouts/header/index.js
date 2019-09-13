@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { AppBar, withStyles, Toolbar, Typography } from '@material-ui/core';
+import React, { Component } from "react";
+import clsx from "clsx";
+import { AppBar, withStyles, Toolbar, Typography } from "@material-ui/core";
 
-import GlobalMUIStyles from '../../assets/global-mui-styles';
+import GlobalMUIStyles from "../../assets/global-mui-styles";
 
 class Header extends Component {
   render() {
@@ -9,7 +10,10 @@ class Header extends Component {
 
     return (
       <>
-        <AppBar position="fixed" className={classes.appBar}>
+        <AppBar
+          position="absolute"
+          className={clsx(classes.appBar, true && classes.appBarShift)}
+        >
           <Toolbar>
             <Typography variant="h6">Testando essa UI</Typography>
           </Toolbar>

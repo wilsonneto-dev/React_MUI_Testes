@@ -18,43 +18,45 @@ class Menu extends Component {
     const { classes } = this.props;
 
     return (
-      <div>
-        <nav aria-label="mailbox folders">
-          <Hidden xsDown implementation="css">
-            <Drawer variant="permanent" open>
-              <div>
-                <div className={classes.toolbar} />
-                <List>
-                  <Divider />
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !true && classes.drawerPaperClose)
+        }}
+        open={true}
+      >
+        <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <List>
+          <Divider />
 
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Sort />
-                    </ListItemIcon>
-                    <ListItemText primary="Fluxo" />
-                  </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <Sort />
+            </ListItemIcon>
+            <ListItemText primary="Fluxo" />
+          </ListItem>
 
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Archive />
-                    </ListItemIcon>
-                    <ListItemText primary="Categorias" />
-                  </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <Archive />
+            </ListItemIcon>
+            <ListItemText primary="Categorias" />
+          </ListItem>
 
-                  <Divider />
+          <Divider />
 
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Code />
-                    </ListItemIcon>
-                    <ListItemText primary="Sobre" />
-                  </ListItem>
-                </List>
-              </div>
-            </Drawer>
-          </Hidden>
-        </nav>
-      </div>
+          <ListItem button>
+            <ListItemIcon>
+              <Code />
+            </ListItemIcon>
+            <ListItemText primary="Sobre" />
+          </ListItem>
+        </List>
+      </Drawer>
     );
   }
 }
