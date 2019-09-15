@@ -74,6 +74,10 @@ const GlobalMUIStyle = theme => ({
   },
   fixedHeight: {
     height: 240
+  },
+  link: {
+    textDecoration: "none",
+    color: "inherit"
   }
 });
 

@@ -7,23 +7,15 @@ import {
   IconButton,
   Badge
 } from "@material-ui/core";
-import clsx from "clsx";
+
 import GlobalMUIStyles from "../../assets/global-mui-styles";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.handleDrawerOpen = this.handleDrawerOpen.bind(this);
-  }
-
-  handleDrawerOpen() {}
-
   render() {
-    const { classes } = this.props;
-    const open = false;
+    const { classes, onExpandMenu } = this.props;
 
     return (
       <>
@@ -32,9 +24,8 @@ class Header extends Component {
             <IconButton
               edge="start"
               color="inherit"
-              aria-label="open drawer"
-              onClick={this.handleDrawerOpen}
-              className={clsx(classes.menuButton)}
+              onClick={onExpandMenu}
+              className={classes.menuButton}
             >
               <MenuIcon />
             </IconButton>

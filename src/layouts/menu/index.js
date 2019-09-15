@@ -15,51 +15,53 @@ import {
   ListItemIcon,
   ListItemText,
   withStyles,
-  List,
-  IconButton
+  List
 } from "@material-ui/core";
 
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import { Link } from "react-router-dom";
 
 import GlobalMUIStyles from "../../assets/global-mui-styles";
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleDrawerClose = this.handleDrawerClose.bind(this);
+  componentDidMount() {
+    console.log("did mount...", this.props.expanded);
   }
-  handleDrawerClose() {}
 
   render() {
-    const { classes } = this.props;
-    const open = true;
+    const { classes, expanded } = this.props;
 
     return (
       <Drawer
         variant="permanent"
         classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose)
+          paper: clsx(
+            classes.drawerPaper,
+            !expanded && classes.drawerPaperClose
+          )
         }}
-        open={true}
+        open={expanded}
       >
         <div>
           <div className={classes.appBarSpacer} />
           <Divider />
           <List>
-            <ListItem button>
-              <ListItemIcon>
-                <Dashboard />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItem>
+            <Link className={classes.link} to={"/"}>
+              <ListItem button>
+                <ListItemIcon>
+                  <Dashboard />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+            </Link>
 
-            <ListItem button>
-              <ListItemIcon>
-                <Subject />
-              </ListItemIcon>
-              <ListItemText primary="Transações" />
-            </ListItem>
+            <Link className={classes.link} to={"/transactions"}>
+              <ListItem button>
+                <ListItemIcon>
+                  <Subject />
+                </ListItemIcon>
+                <ListItemText primary="Transações" />
+              </ListItem>
+            </Link>
 
             <ListItem button>
               <ListItemIcon>

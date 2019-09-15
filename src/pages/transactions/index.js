@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
 import GlobalMUIStyles from "../../assets/global-mui-styles";
-
 import { withStyles, Container, Paper } from "@material-ui/core";
 
-class Main extends Component {
+class Transactions extends Component {
   render() {
     const { classes } = this.props;
 
@@ -12,11 +10,11 @@ class Main extends Component {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Paper>Implementar dashboard</Paper>
+          <Paper>Implementar transactions</Paper>
         </Container>
       </main>
     );
   }
 }
 
-export default withStyles(GlobalMUIStyles)(Main);
+export default withStyles(GlobalMUIStyles)(Transactions);
