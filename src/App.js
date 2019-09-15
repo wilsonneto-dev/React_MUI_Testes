@@ -11,40 +11,25 @@ import Menu from "./layouts/menu";
 
 import GlobalStyle from "./assets/global-styles";
 
-import { withStyles, Container, Paper, CssBaseline } from "@material-ui/core";
+import { withStyles, CssBaseline } from "@material-ui/core";
 import GlobalMUIStyles from "./assets/global-mui-styles";
 
 class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <Provider store={store}>
+        <GlobalStyle />
         <CssBaseline />
-        <Provider store={store}>
-          <GlobalStyle />
-
+        <div className={classes.root}>
           <Header />
           <Menu />
 
-          <main className={classes.content}>
-            <div className={classes.appBarSpacer} />
-            <Container maxWidth="lg" className={classes.container}>
-              <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
-              <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
-              <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
-              <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
-              <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
-              <Paper>Teste Teste Teste Teste Teste Teste Teste Teste </Paper>
-              <Paper>Teste</Paper>
-              <Paper>Teste</Paper>
-              <Paper>Teste</Paper>
-              <Paper>Teste</Paper>
-            </Container>
-          </main>
+          <Routes />
 
           <Footer />
-        </Provider>
-      </div>
+        </div>
+      </Provider>
     );
   }
 }
